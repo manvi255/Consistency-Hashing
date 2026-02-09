@@ -248,7 +248,7 @@ hash_ring.py
 rebalancer.py
 main.py
 README.md
-.gitignore
+
 
 ---
 
