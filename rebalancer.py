@@ -1,5 +1,6 @@
 from collections import defaultdict
 
+
 class Rebalancer:
     def __init__(self, ring):
         self.ring = ring
@@ -13,5 +14,8 @@ class Rebalancer:
     def load_distribution(self, keys):
         dist = defaultdict(int)
         for key in keys:
-            dist[self.ring.get_node(key)] += 1
+            node = self.ring.get_node(key)
+            if node is not None:
+                dist[node] += 1
         return dict(dist)
+
